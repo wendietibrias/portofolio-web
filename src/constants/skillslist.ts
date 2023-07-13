@@ -1,0 +1,54 @@
+export default [
+    {
+        title:'HTML 5',
+        icon:'https://img.icons8.com/color/48/html-5--v1.png'
+    },
+    {
+        title:'CSS 3',
+        icon:'https://img.icons8.com/fluency/48/css3.png'
+    },
+    {
+        title:'Javascript',
+        icon:'https://img.icons8.com/color/48/javascript--v1.png'
+    },
+    {
+        title:'React.js',
+        icon:'https://img.icons8.com/plasticine/100/react.png'
+    },
+    {
+        title:'Vue.js',
+        icon:'https://img.icons8.com/color/48/vue-js.png'
+    },
+    {
+        title:'Next.js',
+        icon:'https://seeklogo.com/images/N/next-js-logo-7929BCD36F-seeklogo.com.png'
+    },
+    {
+        title:'Laravel',
+        icon:'https://img.icons8.com/fluency/48/laravel.png'
+    },
+    {
+        title:'Nest.js',
+        icon:'https://d33wubrfki0l68.cloudfront.net/e937e774cbbe23635999615ad5d7732decad182a/26072/logo-small.ede75a6b.svg'
+    },
+    {
+        title:"PHP",
+        icon:"https://www.php.net//images/logos/new-php-logo.svg"
+    },
+    {
+        title:"Node.js",
+        icon:"http://nodejs.org/images/logos/nodejs.png"
+    },
+    {
+        title:"Express.js",
+        icon:"https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png?20170429090805"
+    },
+    {
+        title:"MongoDB",
+        icon:'https://img.icons8.com/external-tal-revivo-green-tal-revivo/36/external-mongodb-a-cross-platform-document-oriented-database-program-logo-green-tal-revivo.png'
+    },
+    {
+        title:"MYSQL",
+        icon:'https://img.icons8.com/color/48/mysql-logo.png'
+    }
+]
