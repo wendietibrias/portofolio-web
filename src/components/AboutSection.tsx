@@ -1,7 +1,7 @@
 "use client"
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import profile from '../assets/images/cv profile.jpg';
+import profile from '../assets/images/cv-profile.jpg';
 
 const AboutSection = () => {
  
@@ -18,12 +18,12 @@ const AboutSection = () => {
   }
 
     return (
-            <motion.div initial="hidden" whileInView="visible" variants={variant} className="w-[65%] mx-auto md:w-full xl:w-[80%] sm:w-full sm:px-5">
+            <div className="w-[65%] mx-auto md:w-full xl:w-[80%] sm:w-full sm:px-5">
             <div className="text-center">
                 <h5 className="text-blue-500 text-sm font-semibold">About</h5>
                 <h2 className="text-2xl font-bold mt-1 text-gray-800 uppercase">About Me</h2>
             </div>
-            <div className="flex items-start sm:flex-col justify-between mt-10 sm:mt-10 gap-x-14">
+            <motion.div initial="hidden" whileInView="visible" variants={variant} className="flex items-start sm:flex-col justify-between mt-10 sm:mt-10 gap-x-14">
                   <div className="w-[350px] sm:w-full relative h-[350px] bg-blue-500 sm:bg-transparent flex justify-center rounded-md">
                     <Image src={profile}  className="absolute sm:relative  sm:top-0 sm:right-0 top-4 rounded-md -right-4" alt="profile cv" width={350} height={350} />
                 </div>
@@ -53,8 +53,8 @@ const AboutSection = () => {
                     </ul>
                     <button className="text-white font-semibold text-[13px] bg-blue-400 py-2 px-4 rounded-md mt-7">Download CV</button>
                 </div>
-            </div>
-        </motion.div>
+            </motion.div>
+        </div>
     )
 }
 

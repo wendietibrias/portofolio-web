@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import socialicon from "@/constants/socialicon";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
 

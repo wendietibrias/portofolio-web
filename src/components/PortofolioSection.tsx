@@ -1,4 +1,5 @@
 "use client"
+import { motion } from "framer-motion";
 import { useState,useEffect } from "react";
 import { IPortofolioResponse } from "@/interfaces/portofolioResponse.interface";
 import { urlForImage } from "../../sanity/lib/image";
@@ -6,6 +7,18 @@ import sanityClient from "@/services/sanityClient";
 import Link from "next/link";
 
 const PortofolioSection = () => {
+  const variant = {
+      visible: {  
+        opacity:1,
+        transition:{ duration:2.1 },
+        y:0
+      },
+      hidden: {
+         opacity:0,
+         y:110
+      }
+  }
+
   const [portofolioItems,setPortofolioItems] = useState<IPortofolioResponse[]>([]);
    
   const fetchPortofolios = async () => {
@@ -28,7 +41,7 @@ const PortofolioSection = () => {
               <h5 className="text-blue-500 text-sm font-semibold">Portofolio</h5>
               <h2 className="text-2xl font-bold mt-1 text-gray-800 uppercase">My Project</h2>
           </div>
-          <div className="grid grid-cols-3 sm:grid-cols-1 lg:grid-cols-2 gap-4 mt-10">
+          <motion.div initial="hidden" whileInView="visible" variants={variant} className="grid grid-cols-3 sm:grid-cols-1 lg:grid-cols-2 gap-4 mt-10">
             {portofolioItems.map((item : IPortofolioResponse, idx : number) => (
               <div className="w-full bg-white rounded-md shadow-lg shadow-gray-200 overflow-hidden" key={idx}>
                  <img src={urlForImage(item.thumbnail).width(700).height(500).url()} alt={item.title} className="w-full h-[300px]" />
@@ -53,7 +66,7 @@ const PortofolioSection = () => {
                  </div>
               </div>
             ))}
-          </div>
+          </motion.div>
     </div>
   )
 }
