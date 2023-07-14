@@ -1,7 +1,7 @@
 "use client"
+import { motion } from "framer-motion";
 import Link from "next/link";
 import socialicon from "@/constants/socialicon";
-import { motion } from "framer-motion";
 
 const HeroSection = () => {
 
@@ -24,7 +24,9 @@ const HeroSection = () => {
                 I'am A <span  className="text-blue-500 font-semibold">Fullstack Developer</span>
             </h2>
             <p className="text-[13px] sm:text-[12px] text-gray-300 mx-auto text-center w-[450px] sm:w-full">I will make a fully full sistem website for the client and make the website online so the clien can access it.</p>
-            <button className="text-white font-semibold text-sm bg-blue-500 mt-7 rounded-full py-2 px-6 border-2 border-blue-500  hover:text-blue-500 hover:bg-transparent">Download CV</button>
+            <Link href="resume/Wendi-CV.pdf" download="wendi-cv">
+                <button className="text-white font-semibold text-sm bg-blue-500 mt-7 transition-colors duration-200 rounded-full py-2 px-6 border-2 border-blue-500  hover:text-blue-500 hover:bg-transparent">Download CV</button>
+            </Link>
             <ul className="absolute sm:hidden left-10 top-[50%] transition-all  translate-y-[-50%] flex flex-col gap-y-5">
                 {socialicon.map((item,idx) => (
                     <Link key={idx} href={item.path} className="hover:text-blue-500">

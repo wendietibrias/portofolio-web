@@ -1,6 +1,7 @@
 "use client"
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import profile from '../assets/images/cv-profile.jpg';
 
 const AboutSection = () => {
@@ -51,7 +52,9 @@ const AboutSection = () => {
                       </li>
  
                     </ul>
-                    <button className="text-white font-semibold text-[13px] bg-blue-400 py-2 px-4 rounded-md mt-7">Download CV</button>
+                    <Link href="resume/Wendi-CV.pdf" download="wendi-cv">
+                      <button className="text-white font-semibold text-[13px] bg-blue-400 py-2 px-4 rounded-md mt-7">Download CV</button>
+                    </Link>
                 </div>
             </motion.div>
         </div>
