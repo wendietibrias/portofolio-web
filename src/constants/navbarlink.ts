@@ -1,22 +1,22 @@
 export default [
     {
         title:'Home',
-        path:"#home"
+        path:"home"
     },
     {
         title:'About',
-        path:"#about"
+        path:"about"
     },
     {
         title:'Skills',
-        path:"#skills"
+        path:"skills"
     },
     {
         title:'Portofolio',
-        path:"#portofolio"
+        path:"portofolio"
     },
     {
         title:'Feedback',
-        path:"#feedback"
+        path:"feedback"
     }
 ];

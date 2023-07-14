@@ -31,3 +31,30 @@ html {
   background-position:center;
   background-repeat:no-repeat;
 }
+
+.active-scroll-spy {
+  color:rgb(59 130 246);
+  font-weight:600;
+}
+
+#scroll-top-button {
+   animation-name:scrollTopAnimate;
+   animation-duration:1.3s;
+   animation-timing-function:ease-in;
+   animation-iteration-count:infinite;
+   animation-fill-mode: both;
+}
+
+@keyframes scrollTopAnimate {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(12px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

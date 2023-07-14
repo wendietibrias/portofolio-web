@@ -5,6 +5,7 @@ import SkillsSection from "./SkillsSection";
 import PortofolioSection from "./PortofolioSection";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
+import ScrollTopButton from "./ScrollTopButton";
 
 export {
     Navbar,
@@ -13,5 +14,6 @@ export {
     SkillsSection,
     PortofolioSection,
     ContactSection,
-    Footer
+    Footer,
+    ScrollTopButton
 }
