@@ -1,4 +1,4 @@
-import {defineType} from 'sanity'
+import {defineType} from 'sanity';
 
 export default defineType({
     name:'portofolio',
@@ -17,8 +17,9 @@ export default defineType({
         },
         {
             name:'category',
-            type:'string',
-            title:'Category'
+            type:'reference',
+            title:'Category',
+            to:[{ type:'category' }]
         },
         {
             name:'thumbnail',
@@ -35,6 +36,7 @@ export default defineType({
             type:'string',
             title:'Repository'
         },
+
         {
             name:'technology',
             type:'array',

@@ -6,6 +6,7 @@ import PortofolioSection from "./PortofolioSection";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
 import ScrollTopButton from "./ScrollTopButton";
+import LoadingSpinner from "./LoadingSpinner";
 
 export {
     Navbar,
@@ -15,5 +16,6 @@ export {
     PortofolioSection,
     ContactSection,
     Footer,
-    ScrollTopButton
+    ScrollTopButton,
+    LoadingSpinner
 }
