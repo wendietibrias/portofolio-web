@@ -29,7 +29,7 @@ const ScrollTopButton = () => {
     },[]);
 
     return (
-       <div id="scroll-top-button" className={`fixed right-10 bottom-8  ${showButton ? "block" : "hidden"}`}>
+       <div id="scroll-top-button" className={`fixed right-10 sm:right-5 bottom-8  ${showButton ? "block" : "hidden"}`}>
          <button onClick={handleScrollTop} className={`text-lg bg-blue-500 text-white font-semibold py-2 px-3 rounded-md `}>
             <i className="ri-arrow-up-line"></i>
          </button>

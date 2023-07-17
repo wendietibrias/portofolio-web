@@ -64,7 +64,7 @@ const PortofolioSection = () => {
                   {/* ri-github-fill */}
                   </div>
                   <p className="text-[12px] text-gray-400 mt-1 mb-4">{item.excerpt}.</p>
-                  <div className="grid grid-cols-4 gap-2 mb-4">
+                  <div className="grid grid-cols-4 sm:grid-cols-3 gap-2 mb-4">
                     {item.technology.map((item, idx) => (
                        <span key={idx} className="text-[11px] text-center bg-gray-100 text-gray-800 py-1 px-2 rounded-full font-semibold">{item.title}</span>
                     ))}
