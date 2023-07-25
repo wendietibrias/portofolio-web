@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
-import sanityClient from "@/services/sanityClient";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import sanityClient from "@/services/sanityClient";
 
 type AlertState = {
     message : string;
@@ -17,6 +18,18 @@ const ContactSection = () => {
         open:false,
         type:""
     });
+
+    const variant = {
+     visible: {
+      opacity:1,
+      transition:{ duration:2.1 },
+      y:0
+    },
+     hidden:{
+      opacity:0,
+      y:-120
+    }
+  }
 
     const submitHandler =  async (data : any) => {
         setLoading(true);
@@ -65,7 +78,7 @@ const ContactSection = () => {
     }
 
     return (
-        <div className="w-[600px] sm:w-full sm:px-5 mx-auto">
+        <motion.div variants={variant} initial="hidden" whileInView="visible" className="w-[600px] sm:w-full sm:px-5 mx-auto">
             <div className="text-center">
                 <h5 className="text-blue-500 text-sm font-semibold">Feedback</h5>
                 <h2 className="text-2xl font-bold mt-1 text-gray-800 uppercase">Your Feedback</h2>
@@ -82,7 +95,7 @@ const ContactSection = () => {
                 <textarea {...register('feedback', { required:true })} name="feedback" placeholder="Your Feedback" className={`w-full border outline-none resize-none h-[200px] border-gray-200 py-2 px-2 rounded-md text-sm ${errors.feedback && "border border-red-500"}`}></textarea>
                 <button className="mt-4 text-white text-[13px] py-2 font-semibold bg-blue-500 rounded-full">{loading ? "Wait..." : "Submit"}</button>
             </form>
-        </div>
+        </motion.div>
     )
 }
 
