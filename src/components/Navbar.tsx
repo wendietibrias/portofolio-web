@@ -15,7 +15,8 @@ const Navbar = () => {
         allSection.forEach((section,idx) => {
              if(section.getAttribute('id')?.includes(path) && allLinkItem[idx].getAttribute('data-to-scrollspy-id')?.includes(path)) {
                 section.scrollIntoView({
-                    behavior:'smooth'
+                    behavior:'smooth',
+                    block:"start"
                 });
                 allLinkItem[idx].classList.add('active-scroll-spy');
              }
@@ -24,14 +25,16 @@ const Navbar = () => {
 
     useEffect(() => {
     if(typeof window !== 'undefined') {
+        
         if(window.scrollY > 100) {
              setActiveNavbar(true);
         }
 
         window.addEventListener('scroll' , function() {
             if(this.scrollY < 100) {
-                const allItemNavbarLink = document.querySelectorAll('ul a');
-                allItemNavbarLink.forEach((item)=>item.classList.remove("active-scroll-spy"))
+                const allItemNavbarLink = document.querySelectorAll('ul button');
+                allItemNavbarLink.forEach((item)=>item.classList.remove("active-scroll-spy"));
+                console.log("test");
             }
 
             if(this.scrollY > 100) {
