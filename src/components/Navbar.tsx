@@ -16,7 +16,7 @@ const Navbar = () => {
              if(section.getAttribute('id')?.includes(path) && allLinkItem[idx].getAttribute('data-to-scrollspy-id')?.includes(path)) {
                 section.scrollIntoView({
                     behavior:'smooth',
-                    block:"start"
+                    block:"nearest"
                 });
                 allLinkItem[idx].classList.add('active-scroll-spy');
              }
@@ -55,7 +55,7 @@ const Navbar = () => {
                 </Link>
                 <ul className={`flex ${activeNavbar ? "text-gray-800" : "text-white sm:text-gray-800"} sm:bg-white sm:h-screen sm:py-5 sm:px-5 sm:gap-y-3 sm:w-[60%] sm:transition-all sm:duration-700 sm:items-start items-center sm:flex-col gap-x-7 sm:fixed  sm:top-0 ${openSidebar ? "sm:left-0" : "sm:-left-[100%]"}`}>
                     {navbarlink.map((item,idx) => (
-                        <button onClick={() => handleScrollIntoView(item.path)}  data-to-scrollspy-id={item.path} key={idx}>
+                        <button className="link-nav-button" onClick={() => handleScrollIntoView(item.path)}  data-to-scrollspy-id={item.path} key={idx}>
                             <span className={`text-[13px] sm:text-sm font-medium transition-colors duration-100`}>{item.title}</span>
                         </button>
                     ))}

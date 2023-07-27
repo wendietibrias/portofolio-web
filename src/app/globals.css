@@ -35,10 +35,21 @@ body {
   background-repeat:no-repeat;
 }
 
-.active-scroll-spy {
-  color:rgb(59 130 246);
-  font-weight:600;
+
+
+.link-nav-button {
+  position:relative;
+  transition:color 0.2s ease;
 }
+
+.link-nav-button.active-scroll-spy {
+  color: rgb(59 130 246);
+  font-weight: 600;
+}
+
+
+
+
 
 #scroll-top-button {
    animation-name:scrollTopAnimate;
