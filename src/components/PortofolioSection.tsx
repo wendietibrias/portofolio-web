@@ -53,7 +53,7 @@ const PortofolioSection = () => {
           {loading && portofolioItems.length == 0 ? (
              <LoadingSpinner/>
           ) : (
-            <motion.div initial="hidden" whileInView="visible" variants={variant} className="grid grid-cols-3 sm:grid-cols-1 lg:grid-cols-2 gap-4 mt-10">
+            <motion.div initial="hidden" whileInView="visible" variants={variant} className={`${portofolioItems.length > 4 ? "grid-cols-3" : "grid-cols-4"} grid  sm:grid-cols-1 lg:grid-cols-2 gap-4 mt-10`}>
             {portofolioItems.map((item : IPortofolioResponse, idx : number) => (
               <div className="w-full bg-white rounded-md shadow-lg shadow-gray-200 overflow-hidden" key={idx}>
                  <img src={urlForImage(item.thumbnail).width(700).height(500).url()} alt={item.title} className="w-full h-[300px]" />
