@@ -53,7 +53,7 @@ const PortofolioSection = () => {
           {loading && portofolioItems.length == 0 ? (
              <LoadingSpinner/>
           ) : (
-            <motion.div initial="hidden" whileInView="visible" variants={variant} className={`${portofolioItems.length > 4 ? "grid-cols-3" : "grid-cols-4"} grid  sm:grid-cols-1 lg:grid-cols-2 gap-4 mt-10`}>
+            <motion.div initial="hidden" whileInView="visible" variants={variant} className={`grid grid-cols-3 sm:grid-cols-1 lg:grid-cols-2 gap-4 mt-10`}>
             {portofolioItems.map((item : IPortofolioResponse, idx : number) => (
               <div className="w-full bg-white rounded-md shadow-lg shadow-gray-200 overflow-hidden" key={idx}>
                  <img src={urlForImage(item.thumbnail).width(700).height(500).url()} alt={item.title} className="w-full h-[300px]" />
@@ -64,7 +64,7 @@ const PortofolioSection = () => {
                   {/* ri-github-fill */}
                   </div>
                   <p className="text-[12px] text-gray-400 mt-1 mb-4">{item.excerpt}.</p>
-                  <div className="grid grid-cols-4 sm:grid-cols-3 gap-2 mb-4">
+                  <div className={`grid ${Array.isArray(item.technology) && item.technology.length > 4 ? "grid-cols-3" : "grid-cols-4"} sm:grid-cols-3 gap-2 mb-4`}>
                     {item.technology.map((item, idx) => (
                        <span key={idx} className="text-[11px] text-center bg-gray-100 text-gray-800 py-1 px-2 rounded-full font-semibold">{item.title}</span>
                     ))}
