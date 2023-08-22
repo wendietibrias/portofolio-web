@@ -1,11 +1,14 @@
 "use client"
-import { motion } from "framer-motion";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import { useState,useEffect } from "react";
 import { IPortofolioResponse } from "@/interfaces/portofolioResponse.interface";
 import { urlForImage } from "../../sanity/lib/image";
-import sanityClient from "@/services/sanityClient";
-import Link from "next/link";
+import { motion } from "framer-motion";
 import LoadingSpinner from "./LoadingSpinner";
+import sanityClient from "@/services/sanityClient";
+import Slider from "react-slick"; 
+import Link from "next/link";
 
 const PortofolioSection = () => {
   const variant = {
@@ -19,6 +22,14 @@ const PortofolioSection = () => {
          y:110
       }
   }
+
+   const settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 4,
+      autoplay:true
+   };
  
   const [loading,setLoading] = useState<boolean>(true);
   const [portofolioItems,setPortofolioItems] = useState<IPortofolioResponse[]>([]);
@@ -64,11 +75,11 @@ const PortofolioSection = () => {
                   {/* ri-github-fill */}
                   </div>
                   <p className="text-[12px] text-gray-400 mt-1 mb-4">{item.excerpt}.</p>
-                  <div className={`grid ${Array.isArray(item.technology) && item.technology.length > 4 ? "grid-cols-3" : "grid-cols-4"} sm:grid-cols-3 gap-2 mb-4`}>
+                  <Slider className="mb-4" {...settings}>
                     {item.technology.map((item, idx) => (
                        <span key={idx} className="text-[11px] text-center bg-gray-100 text-gray-800 py-1 px-2 rounded-full font-semibold">{item.title}</span>
                     ))}
-                  </div>
+                  </Slider>
                   {item.website && (
                      <Link href={`${item.website}`} target="_blank">
                       <span className="flex items-center text-[12px] ml-1 font-semibold gap-x-2 text-blue-500">
