@@ -100,7 +100,7 @@ const PortofolioSection = () => {
               <img
                 src={urlForImage(item.thumbnail).width(700).height(500).url()}
                 alt={item.title}
-                className="w-full h-[300px]"
+                className="w-full h-[300px] object-cover"
               />
               <div className="py-4 px-4 bg-white">
                 <div className="flex justify-between items-center text-gray-800">
@@ -115,12 +115,14 @@ const PortofolioSection = () => {
                 </p>
                 <Slider className="mb-4" {...settings}>
                   {item.technology.map((item, idx) => (
-                    <span
-                      key={idx}
-                      className="text-[11px] text-center bg-gray-100 text-gray-800 py-1 px-2 rounded-full font-semibold"
-                    >
-                      {item.title}
-                    </span>
+                    <div className="w-full px-1">
+                      <span
+                        key={idx}
+                        className="flex justify-center text-[11px] text-center bg-gray-100 text-gray-800 py-1 px-2 rounded-full font-semibold"
+                      >
+                        {item.title}
+                      </span>
+                    </div>
                   ))}
                 </Slider>
                 {item.website && (

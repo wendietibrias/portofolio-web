@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import profile from "../assets/images/cv-profile.jpg";
+import me from "../assets/images/me.jpg";
 
 const AboutSection = () => {
   const variant = {
@@ -33,11 +34,9 @@ const AboutSection = () => {
       >
         <div className="w-[350px] sm:w-full relative h-[350px] bg-blue-500 sm:bg-transparent flex justify-center rounded-md">
           <Image
-            src={profile}
-            className="absolute sm:relative  sm:top-0 sm:right-0 top-4 rounded-md -right-4"
+            src={me}
+            className="absolute sm:relative w-[330px] h-[360px] object-cover sm:top-0 sm:right-0 top-4 rounded-md -right-2"
             alt="profile cv"
-            width={350}
-            height={350}
           />
         </div>
         <div className="flex-1 sm:w-full mt-3 sm:mt-10">
