@@ -18,5 +18,6 @@ export default [
     {
         title:'Feedback',
         path:"feedback"
-    }
+    },
+
 ];

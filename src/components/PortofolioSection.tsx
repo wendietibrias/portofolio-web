@@ -104,13 +104,15 @@ const PortofolioSection = () => {
               />
               <div className="py-4 px-4 bg-white">
                 <div className="flex justify-between items-center text-gray-800">
-                  <h2 className="text-xl font-bold">{item?.title}</h2>
+                  <h2 className="text-xl sm:text-lg font-bold">
+                    {item?.title}
+                  </h2>
                   <Link href={item.repository} target="_blank">
                     <i className="ri-github-fill text-[18px]"></i>
                   </Link>
                   {/* ri-github-fill */}
                 </div>
-                <p className="text-[12px] text-gray-400 mt-1 mb-4">
+                <p className="text-[12px] text-gray-400 mt-2 mb-4">
                   {item.excerpt}.
                 </p>
                 <Slider className="mb-4" {...settings}>
@@ -138,6 +140,13 @@ const PortofolioSection = () => {
           ))}
         </motion.div>
       )}
+      {/* <div className="w-full text-center mt-10">
+        <Link href="/projects">
+          <button className="bg-blue-500 text-white text-sm font-semibold py-2 px-4 rounded-full">
+            See More
+          </button>
+        </Link>
+      </div> */}
     </div>
   );
 };
