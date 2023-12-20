@@ -51,9 +51,7 @@ const PortofolioSection = () => {
   };
 
   const [loading, setLoading] = useState<boolean>(true);
-  const [portofolioItems, setPortofolioItems] = useState<IPortofolioResponse[]>(
-    []
-  );
+  const [portofolioItems, setPortofolioItems] = useState<IPortofolioResponse[]>([]);
 
   const fetchPortofolios = async () => {
     setLoading(true);
@@ -78,50 +76,29 @@ const PortofolioSection = () => {
     <div className="w-[80%] xl:w-full md:w-full xl:px-10 sm:px-5 mx-auto">
       <div className="text-center">
         <h5 className="text-blue-500 text-sm font-semibold">Portofolio</h5>
-        <h2 className="text-2xl font-bold mt-1 text-gray-800 uppercase">
-          My Project
-        </h2>
+        <h2 className="text-2xl font-bold mt-1 text-gray-800 uppercase">My Project</h2>
       </div>
 
       {loading && portofolioItems.length == 0 ? (
         <LoadingSpinner />
       ) : (
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={variant}
-          className={`grid grid-cols-3 sm:grid-cols-1 lg:grid-cols-2 gap-4 mt-10`}
-        >
+        <motion.div initial="hidden" whileInView="visible" variants={variant} className={`grid grid-cols-3 sm:grid-cols-1 lg:grid-cols-2 gap-4 mt-10`}>
           {portofolioItems.map((item: IPortofolioResponse, idx: number) => (
-            <div
-              className="w-full bg-white rounded-md shadow-lg shadow-gray-200 overflow-hidden"
-              key={idx}
-            >
-              <img
-                src={urlForImage(item.thumbnail).width(700).height(500).url()}
-                alt={item.title}
-                className="w-full h-[300px] object-cover"
-              />
+            <div className="w-full bg-white rounded-md shadow-lg shadow-gray-200 overflow-hidden" key={idx}>
+              <img src={urlForImage(item.thumbnail).width(700).height(500).url()} alt={item.title} className="w-full h-[300px] object-cover" />
               <div className="py-4 px-4 bg-white">
                 <div className="flex justify-between items-center text-gray-800">
-                  <h2 className="text-xl sm:text-lg font-bold">
-                    {item?.title}
-                  </h2>
+                  <h2 className="text-xl xs:text-[16px] sm:text-lg font-bold">{item?.title}</h2>
                   <Link href={item.repository} target="_blank">
                     <i className="ri-github-fill text-[18px]"></i>
                   </Link>
                   {/* ri-github-fill */}
                 </div>
-                <p className="text-[12px] text-gray-400 mt-2 mb-4">
-                  {item.excerpt}.
-                </p>
+                <p className="text-[12px] text-gray-400 mt-2 xs:mt-1 mb-4">{item.excerpt}.</p>
                 <Slider className="mb-4" {...settings}>
                   {item.technology.map((item, idx) => (
                     <div className="w-full px-1">
-                      <span
-                        key={idx}
-                        className="flex justify-center text-[11px] text-center bg-gray-100 text-gray-800 py-1 px-2 rounded-full font-semibold"
-                      >
+                      <span key={idx} className="flex justify-center text-[11px] text-center bg-gray-100 text-gray-800 py-1 px-2 rounded-full font-semibold">
                         {item.title}
                       </span>
                     </div>
