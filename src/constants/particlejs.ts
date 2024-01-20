@@ -19,7 +19,7 @@ const particleOptions = {
       },
       modes: {
         push: {
-          quantity: 3,
+          quantity: 7,
         },
         repulse: {
           distance: 250,
@@ -33,9 +33,9 @@ const particleOptions = {
       },
       links: {
         color: "#ffffff",
-        distance: 150,
+        distance: 100,
         enable: true,
-        opacity: 0.5,
+        opacity: 0.7,
         width: 1,
       },
       move: {
@@ -44,15 +44,15 @@ const particleOptions = {
         outModes: {
           default: "bounce",
         },
-        random: false,
-        speed: 7,
+        random: true,
+        speed: 8,
         straight: false,
       },
       number: {
         density: {
           enable: true,
         },
-        value: 80,
+        value: 70,
       },
       opacity: {
         value: 0.5,

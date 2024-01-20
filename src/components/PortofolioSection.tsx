@@ -102,16 +102,16 @@ const PortofolioSection = () => {
               particlesLoaded={particlesLoaded}
               options={options}
             />
-          <div className="w-[80%] z-[100] xl:w-full md:w-full py-20 xl:px-10 sm:px-5 mx-auto">
-          <div className="text-center">
-            <h5 className="text-blue-500 text-sm font-semibold">Portofolio</h5>
-            <h2 className="text-2xl font-bold mt-1 text-gray-800 uppercase">My Project</h2>
-          </div>
+          <div className="w-[80%] xl:w-full md:w-full py-20 xl:px-10 sm:px-5 mx-auto">
+          {/* <div className="text-center">
+            <h5 className="text-blue-500 z-[999] text-sm font-semibold">Portofolio</h5>
+            <h2 className="text-2xl font-bold mt-1 z-[999] text-gray-800 uppercase">My Project</h2>
+          </div> */}
 
           {loading && portofolioItems.length == 0 ? (
             <LoadingSpinner />
           ) : (
-            <motion.div initial="hidden" whileInView="visible" variants={variant} className={`grid grid-cols-3 sm:grid-cols-1 lg:grid-cols-2 gap-4 mt-10`}>
+            <motion.div initial="hidden" whileInView="visible" variants={variant} className={`grid grid-cols-3 sm:grid-cols-1 lg:grid-cols-2 gap-4`}>
               {portofolioItems.map((item: IPortofolioResponse, idx: number) => (
                 <div className="w-full z-[99] bg-white rounded-md shadow-lg shadow-gray-200 overflow-hidden" key={idx}>
                   <img src={urlForImage(item.thumbnail).width(700).height(500).url()} alt={item.title} className="w-full h-[300px] object-cover" />
