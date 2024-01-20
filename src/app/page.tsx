@@ -33,7 +33,7 @@ const Home = () => {
         <section id="skills" className="w-full bg-white py-20">
           <SkillsSection />
         </section>
-        <section id="portofolio" className="bg-gray-100 py-20">
+        <section id="portofolio" className="bg-gray-100">
           <PortofolioSection />
         </section>
         <section id="feedback" className="bg-white w-full py-20">
