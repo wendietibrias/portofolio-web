@@ -75,15 +75,12 @@ const PortofolioSection = () => {
   }, []);
 
 
-  if(!init) return null;
-
-
   return (
      <div className="w-full relative">
           <div className="w-[80%] xl:w-full md:w-full py-20 xl:px-10 sm:px-5 mx-auto">
           <div className="text-center">
-            <h5 className="text-blue-500 z-[999] text-sm font-semibold">Portofolio</h5>
-            <h2 className="text-2xl font-bold mt-1 z-[999] text-gray-800 uppercase">My Project</h2>
+            <h5 className="text-blue-500  text-sm font-semibold">Portofolio</h5>
+            <h2 className="text-2xl font-bold mt-1 text-gray-800 uppercase">My Project</h2>
           </div>
 
           {loading && portofolioItems.length == 0 ? (
