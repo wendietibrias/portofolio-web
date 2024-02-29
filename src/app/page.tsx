@@ -11,6 +11,7 @@ import {
   ContactSection,
   Footer,
   ScrollTopButton,
+  ExperienceSection,
 } from "@/components";
 
 const Home = () => {
@@ -33,10 +34,13 @@ const Home = () => {
         <section id="skills" className="w-full bg-white py-20">
           <SkillsSection />
         </section>
-        <section id="portofolio" className="bg-gray-100">
+        <section id="experiences" className="bg-gray-100">
+          <ExperienceSection/>
+        </section>
+        <section id="portofolio" className="bg-white">
           <PortofolioSection />
         </section>
-        <section id="feedback" className="bg-white w-full py-20">
+        <section id="feedback" className="bg-gray-100 w-full py-20">
           <ContactSection />
         </section>
         <ScrollTopButton />

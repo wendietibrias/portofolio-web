@@ -12,12 +12,15 @@ export default [
         path:"skills"
     },
     {
+        title:'Experiences',
+        path:'experiences'
+    },
+    {
         title:'Portofolio',
         path:"portofolio"
     },
     {
         title:'Feedback',
         path:"feedback"
-    },
-
+    }
 ];

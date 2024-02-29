@@ -7,6 +7,7 @@ import ContactSection from "./ContactSection";
 import Footer from "./Footer";
 import ScrollTopButton from "./ScrollTopButton";
 import LoadingSpinner from "./LoadingSpinner";
+import ExperienceSection from "./Experience";
 
 export {
     Navbar,
@@ -17,5 +18,6 @@ export {
     ContactSection,
     Footer,
     ScrollTopButton,
-    LoadingSpinner
+    LoadingSpinner,
+    ExperienceSection
 }
