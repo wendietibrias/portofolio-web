@@ -60,7 +60,7 @@ const AboutSection = () => {
               <span className="text-[12px] font-semibold text-blue-500">Open To Work</span>
             </li>
           </ul>
-          <Link target="_blank" href="https://drive.google.com/file/d/14St4Mwv6UfHVNc-AqqmrJ1sbziRyeX8s/view?usp=sharing" download="wendi-cv">
+          <Link target="_blank" href="https://drive.google.com/file/d/1NyIvaopIXDWXv1jefMN3qUu07G51A__1/view" download="wendi-cv">
             <button className="text-white font-semibold text-[13px] bg-blue-400 py-2 px-4 rounded-md mt-7">Download CV</button>
           </Link>
         </div>
