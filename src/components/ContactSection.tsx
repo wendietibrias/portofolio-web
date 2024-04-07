@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import sanityClient from "@/services/sanityClient";
+import { IFormFeedback } from "@/interfaces/formFeedback.interface";
 
 type AlertState = {
   message: string;
@@ -17,7 +18,8 @@ const ContactSection = () => {
     formState: { errors },
     handleSubmit,
     setValue,
-  } = useForm();
+    getValues
+  } = useForm<IFormFeedback>();
 
   const [loading, setLoading] = useState<boolean>(false);
   const [alert, setAlert] = useState<AlertState>({
@@ -37,6 +39,15 @@ const ContactSection = () => {
       y: -120,
     },
   };
+
+
+  const validateSpaceStr = (str:string,field?:string)=>{
+     if(str.trim().length === 0){
+        return `${field} field must be filled`;
+     }
+
+     return false;
+  }
 
   const submitHandler = async (data: any) => {
     setLoading(true);
@@ -96,6 +107,8 @@ const ContactSection = () => {
           Your Feedback
         </h2>
       </div>
+
+
       {alert.open && (
         <div
           className={`w-full mt-5 py-2 px-2 flex justify-between items-center rounded-md ${
@@ -115,37 +128,84 @@ const ContactSection = () => {
           </button>
         </div>
       )}
+
       <form
         onSubmit={handleSubmit(submitHandler)}
         className="mt-10 flex flex-col gap-y-2"
       >
-        <input
-          {...register("name", { required: true })}
-          type="text"
-          name="name"
-          placeholder="Username"
-          className={`w-full border outline-none border-gray-200 py-2 px-2 rounded-md text-sm ${
-            errors.name && "border border-red-500"
-          }`}
-        />
-        <input
-          {...register("email", { required: true })}
-          type="Email"
-          name="email"
-          placeholder="Email"
-          className={`w-full border outline-none border-gray-200 py-2 px-2 rounded-md text-sm ${
-            errors.email && "border border-red-500"
-          }`}
-        />
-        <textarea
-          {...register("feedback", { required: true })}
-          name="feedback"
-          placeholder="Your Feedback"
-          className={`w-full border outline-none resize-none h-[200px] border-gray-200 py-2 px-2 rounded-md text-sm ${
-            errors.feedback && "border border-red-500"
-          }`}
-        ></textarea>
-        <button className="mt-4 text-white text-[13px] py-2 font-semibold bg-blue-500 rounded-full">
+        <div className="w-full">
+          <input
+            {
+              ...register(
+                "email", 
+                { 
+                  required: 'Email field is required',
+                  validate:(value)=> validateSpaceStr(value,"Email"),
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                    message: "Invalid email address"
+                  }
+                }
+              )
+            }
+            type="text"
+            name="email"
+            placeholder="Email Address"
+            className={`w-full border outline-none border-gray-200 py-2 px-2 rounded-md text-sm ${
+              errors.email && "border border-red-500"
+            }`}
+          />
+          {
+            errors.email && 
+            <p className="text-[13px] text-red-500 font-medium mt-1">{errors.email.message}</p>
+          }
+        </div>
+        <div className="w-full">
+          <input
+                {
+                  ...register(
+                    "name", 
+                    { 
+                      required: 'Name field is required',
+                      validate:(value)=> validateSpaceStr(value,"Name"), 
+                    }
+                  )
+                }
+              type="text"
+              name="name"
+              placeholder="Username"
+              className={`w-full border outline-none border-gray-200 py-2 px-2 rounded-md text-sm ${
+                errors.name && "border border-red-500"
+              }`}
+            />
+          {
+            errors.name && 
+            <p className="text-[13px] text-red-500 font-medium mt-1">{errors.name.message}</p>
+          }
+        </div>
+        <div className="w-full">
+          <textarea
+             {
+              ...register(
+                "feedback", 
+                {
+                   required: 'Feedback field is required',
+                   validate: (value)=> validateSpaceStr(value,'Feedback')
+                }
+              )
+            }
+            name="feedback"
+            placeholder="Your Feedback"
+            className={`w-full border outline-none resize-none h-[200px] border-gray-200 py-2 px-2 rounded-md text-sm ${
+              errors.feedback && "border border-red-500"
+            }`}
+          ></textarea>
+          {
+            errors.feedback && 
+            <p className="text-[13px] text-red-500 font-medium mt-1">{errors.feedback?.message}</p>
+          }
+        </div>
+        <button disabled={loading} className="mt-4 text-white text-[13px] py-2 font-semibold bg-blue-500 rounded-full">
           {loading ? "Wait..." : "Submit"}
         </button>
       </form>

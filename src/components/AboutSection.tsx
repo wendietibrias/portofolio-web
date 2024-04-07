@@ -20,10 +20,12 @@ const AboutSection = () => {
 
   return (
     <div className="w-[65%] mx-auto md:w-full xl:w-[80%] sm:w-full lg:px-5">
+      
       <div className="text-center">
         <h5 className="text-blue-500 text-sm font-semibold">About</h5>
         <h2 className="text-2xl font-bold mt-1 text-gray-800 uppercase">About Me</h2>
       </div>
+
       <motion.div initial="hidden" whileInView="visible" variants={variant} className="flex items-start sm:flex-col justify-between mt-10 sm:mt-7 gap-x-14 sm:gap-y-5">
         <div className="w-[350px] lg:w-[300px] lg:h-[300px] sm:h-[350px] sm:w-full relative h-[350px] bg-blue-500 sm:bg-transparent flex sm:justify-center rounded-md">
           <Image src={me} className="absolute sm:static sm:w-[330px] sm:h-full w-[330px] h-[360px] object-cover lg:-right-4 sm:top-0 sm:right-0 top-4 rounded-md -right-2" alt="profile cv" />
