@@ -23,10 +23,19 @@ const ExperienceSection = () => {
                     <h4 className="vertical-timeline-element-subtitle text-sm mt-2">PT Kita Serba Digital</h4>
                     <ul className='mt-5 flex flex-col gap-y-3 list-disc'>
                         <li>
-                            <span className='text-sm'>Develop Web App called SiCerdas using Laravel as project Framework.</span>
+                            <span className='text-sm'>
+                               Developing a web application that facilitates the creation of job seeker cards using Laravel.
+                            </span>
                         </li>
                         <li>
-                            <span className='text-sm'>Develop  user interface using bootstrap 4 and Laravel Blade.</span>
+                            <span className='text-sm'>
+                               Build an integrated connection between client and server with Jquery AJAX.
+                            </span>
+                        </li>
+                        <li>
+                            <span className='text-sm'>
+                              Build a Form validation logic using Laravel validation.
+                            </span>
                         </li>
                     </ul>
                     </VerticalTimelineElement>
@@ -42,13 +51,40 @@ const ExperienceSection = () => {
                     <h4 className="vertical-timeline-element-subtitle text-sm mt-2">Thinkspedia</h4>
                     <ul className='mt-5 flex flex-col gap-y-3 list-disc'>
                         <li>
-                            <span className='text-sm'>Develop a intergrated connection between client and server using Restful API.</span>
+                            <span className='text-sm'>Build an Integrated connection between client and server with Nest.js..</span>
                         </li>
                         <li>
-                            <span className='text-sm'>Implement Event Driven Architecture using RabbitMQ as message broker for develop a connection among services.</span>
+                            <span className='text-sm'>Build an API documentation using Swagger API.</span>
                         </li>
                         <li>
-                            <span className='text-sm'>Buld a data transfer object(DTO) for validating body from user using class-validator.</span>
+                            <span className='text-sm'>
+                               Build a Data Transfer Object (DTO) to validate body request from user using class-validator.
+                            </span>
+                        </li>
+                        <li>
+                            <span className='text-sm'>
+                               Implement Event Driven Architecture using RabbitMQ as message broker to build a connection among the services.
+                            </span>
+                        </li>
+                        <li>
+                            <span className='text-sm'>
+                               Manage user data using NOSQL Database MongoDB.
+                            </span>
+                        </li>
+                        <li>
+                            <span className='text-sm'>
+                               Implement caching using Redis to improve App performance.
+                            </span>
+                        </li>
+                        <li>
+                            <span className="text-sm">
+                               Perform daily minor bug fixing.
+                            </span>
+                        </li>
+                        <li>
+                            <span className='text-sm'>
+                               Build Guard for endpoint protection and validating JWT token from client.
+                            </span>
                         </li>
                     </ul>
                     </VerticalTimelineElement>
