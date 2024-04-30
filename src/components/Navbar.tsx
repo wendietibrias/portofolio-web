@@ -20,7 +20,9 @@ const Navbar = () => {
                 });
                 allLinkItem[idx].classList.add('active-scroll-spy');
              }
-        })
+        });
+
+        setOpenSidebar(false);
     }
 
     useEffect(() => {
@@ -61,7 +63,10 @@ const Navbar = () => {
                     ))}
                 </ul>
                 <button onClick={() => setOpenSidebar(!openSidebar)} className={`sm:block hidden text-md font-bold cursor-pointer ${activeNavbar ? "text-gray-800" : "text-white"}`}>
-                    <i className="ri-menu-line"></i>
+                    {!openSidebar ? 
+                      <i className="ri-menu-line"></i> :
+                      <i className="ri-close-line"></i>
+                    }
                 </button>
             </div>
         </nav>
